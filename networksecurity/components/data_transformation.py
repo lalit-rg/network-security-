@@ -35,16 +35,7 @@ class DataTransformation:
             raise NetworkSecurityException(e, sys)
         
     def get_data_transformer_object(cls)->Pipeline:
-        """
-        It initialises a KNNImputer object with the parameters specified in the training_pipeline.py file
-        and returns a Pipeline object with the KNNImputer object as the first step.
-
-        Args:
-          cls: DataTransformation
-
-        Returns:
-          A Pipeline object
-        """
+        
         logging.info(
             "Entered get_data_trnasformer_object method of Trnasformation class"
         )
@@ -93,8 +84,6 @@ class DataTransformation:
 
             save_object( "final_model/preprocessor.pkl", preprocessor_object,)
 
-
-            #preparing artifacts
 
             data_transformation_artifact=DataTransformationArtifact(
                 transformed_object_file_path=self.data_transformation_config.transformed_object_file_path,
